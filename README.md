@@ -1,4 +1,4 @@
-# trabalhoFInalSpringBoot
+# Trabalho FInal Spring Boot
 Trabalho Final do curso de Spring Boot
 
 Este projeto é uma API REST construída com Spring Boot e Maven, utilizando o MySQL como banco de dados relacional. A API fornece endpoints para gerenciar entidades e realizar operações CRUD básicas (Create, Read, Update, Delete).
