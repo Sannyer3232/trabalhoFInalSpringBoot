@@ -6,7 +6,7 @@ Este projeto é uma API REST construída com Spring Boot e Maven, utilizando o M
 Certifique-se de ter os seguintes softwares instalados:
 - [Java 21+]
 - [MySQL Server](https://dev.mysql.com/downloads/mysql/)
-- 
+  
 1. Instale e configure o MySQL Server.
 2. No MySQL, crie um novo banco de dados para o projeto:
    CREATE DATABASE bd_referencias;
