@@ -15,18 +15,21 @@ public class Autor {
 
     @Column(name = "autnome", nullable = false)
     private String nome;
-    @Column(name = "autafiliacao", nullable = false)
-    private String afiliacao;
+    @ManyToOne
+    private Afiliacao afiliacao;
     //Lista de Artigos publicados do autor
     @ManyToMany(mappedBy = "autores")
     private List<Artigo> artigos = new ArrayList<>();
 
+
     //Metodos construtores do objeto da classe modelo Autor
     public Autor() {}
 
-    public Autor(String nome, String afiliacao) {
+    public Autor(Long id, String nome, Afiliacao afiliacao, List<Artigo> artigos) {
+        this.id = id;
         this.nome = nome;
         this.afiliacao = afiliacao;
+        this.artigos = artigos;
     }
 
     //Getters e Setters para manipulação de dados
@@ -47,11 +50,12 @@ public class Autor {
         this.nome = nome;
     }
 
-    public String getAfiliacao() {
+
+    public Afiliacao getAfiliacao() {
         return afiliacao;
     }
 
-    public void setAfiliacao(String afiliacao) {
+    public void setAfiliacao(Afiliacao afiliacao) {
         this.afiliacao = afiliacao;
     }
 

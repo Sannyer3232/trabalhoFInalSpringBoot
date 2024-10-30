@@ -30,7 +30,7 @@ public class AutorOutputDTO {
     public AutorOutputDTO(Autor autor) {
         this.id = autor.getId(); // Define o ID do autor
         this.nome = autor.getNome(); // Define o nome do autor
-        this.afiliacao = autor.getAfiliacao(); // Define a afiliação do autor
+        this.afiliacao = autor.getAfiliacao().getNome(); // Define a afiliação do autor
 
         // Extrai os títulos dos artigos associados ao autor
         List<String> artigos = new ArrayList<>();

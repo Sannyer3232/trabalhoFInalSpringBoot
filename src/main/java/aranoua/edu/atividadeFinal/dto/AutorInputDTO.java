@@ -2,6 +2,7 @@ package aranoua.edu.atividadeFinal.dto;
 
 // Importação da classe Autor
 import aranoua.edu.atividadeFinal.model.Autor;
+import aranoua.edu.atividadeFinal.repository.AfiliacaoRepository;
 
 /*
  * Classe DTO de entrada para os dados de um Autor.
@@ -45,13 +46,12 @@ public class AutorInputDTO {
      * Método responsável por construir um objeto Autor a partir dos dados deste DTO.
      * @return Objeto Autor com dados preenchidos a partir do DTO.
      */
-    public Autor build() {
+    public Autor build(AfiliacaoRepository afiliacaoRepository) {
         Autor autor = new Autor();
 
         // Define o nome e a afiliação no objeto Autor
         autor.setNome(this.nome);
-        autor.setAfiliacao(this.afiliacao);
-
+        autor.setAfiliacao(afiliacaoRepository.findBySilga(this.afiliacao));
         return autor; // Retorna o autor com os dados preenchidos
     }
 }
